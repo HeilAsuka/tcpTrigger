@@ -105,15 +105,15 @@
                             Description="Carries out tasks based on incoming network connections"
                             Start="auto"
                             Vital="yes"
-                            Account="NT AUTHORITY\LocalService"
                             ErrorControl="normal" />
+            <!--Account="NT AUTHORITY\LocalService"-->
 
             <!-- Start the service -->
             <ServiceControl Id="StartService"
+                            Name="$(var.ProductName)"
                             Start="install"
                             Stop="both"
                             Remove="uninstall"
-                            Name="tcpTrigger"
                             Wait="no" />
           </Component>
 
